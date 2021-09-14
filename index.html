@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!--font awsome-->
     <script src="https://kit.fontawesome.com/48bee8827e.js" crossorigin="anonymous"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="./js/main.js" defer></script>
@@ -37,6 +41,42 @@
         </navnavBar>
     </header>
     <section class="mainBanner"><img src="./images/main_banner.png" alt="그룹명현"></section>
+    <section class="aboutUs"><img src="./images/aboutUs.png" alt=""></section>
+    <section class="aboutUs__slide">
+        <!-- Slider main container -->
+        <div class="swiper" style="height:400px;">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+            <div class="swiper-slide"><img src="./images/mobile_aboutUs_01.png" alt="observe"></div>
+            <div class="swiper-slide"><img src="./images/mobile_aboutUs_02.png" alt="observe"></div>
+            <div class="swiper-slide"><img src="./images/mobile_aboutUs_03.png" alt="observe"></div>
+        </div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="paginationWrap">
+            <div class="swiper-button-prev"><img src="./images/arrow__left.png" alt=""></div>
+            <div class="swiper-button-next"><img src="./images/arrow__right.png" alt=""></div>
+        </div>
+        </div>  
+    </section>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+
+    <section class="aboutStrong"></section>
     <footer></footer>
 </body>
 </html>
