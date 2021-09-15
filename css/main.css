@@ -1,26 +1,29 @@
-header { width:1200px; margin:0 auto; padding:8px 12px; }
+header { width:1400px; margin:0 auto; padding:8px 12px; }
 .navBar {
     background-color:#d3d3d3; color:#223728; margin:0 auto; height:100px; display:flex;
     justify-content: space-between; align-items: center; width:100%; position:relative;
 }
-.navBar img { width:70%; display:inline-block; }
+.navBar img { width:70%; display:inline-block;}
 .navBar__menu {display:flex; }
 .navBar__menu li { padding:10px 12px; transition: background-color .5s;}
 .navBar__menu li:hover { background-color:darkgrey; border-radius: 4px;}
 .navBar__menu li a{ color:#223728; font-size:17px; padding:8px 12px; text-decoration: none;}
 .navBar__links {display:flex;}
 .navBar__links li{  padding:8px 12px;}
-.navBar__links li a{ }
 .navBar__links li a i{color:#223728; font-size:23px;}
 .navBar__toggleBtn { display:none; position:absolute; right:5%; font-size:30px; color:#223728; line-height: 55px; }
 
 .mainBanner { max-width:1200px; margin:0 auto;}
 .mainBanner img {width:80%; padding-left:10%; padding-top:5%; padding-bottom:5%;}
 
-.aboutUs { display:block; background-color:#f9f9f9;}
+.aboutUs { display:block; background-color:#f9f9f9; text-align:center;}
 .aboutUs__slide { display:none;}
 
-.aboutStrong { background-color:#223728; height:1000px;}
+.ourPhilosophy { height:1000px;}
+.ourPhilosophy .web {display:block;}
+.ourPhilosophy .mobile {display:none;}
+.ourPhilosophy .web img, 
+.ourPhilosophy .mobile img {width:100%;}
 
 /* swiper pagination */
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after { content: ''; }
@@ -31,21 +34,34 @@ header { width:1200px; margin:0 auto; padding:8px 12px; }
 .aboutUs__slide .swiper-button-next img { width:50%;} 
 .aboutUs__slide .swiper-slide img {width:100%;}
 
+.ourPhilosophy {height:auto;}
+
+.video { width:90%; margin:5%; height:1000px;}
+
+footer { height:200px;}
+footer img {width:100%;}
+footer .web {display:block;}
+footer .mobile {display:none;}
+
 @media screen and (max-width:768px) {
     header {width:96%; padding:2% ;}
     .navBar { flex-direction:column; align-items: flex-start;  }
     .navBar img { width:40%; margin-top:3%;}
     .navBar__menu {
         flex-direction:column; align-items: center; width:100%; display:none; 
-        background-color:#d3d3d3;  z-index:2
+        background-color:rgb(129, 163, 140);  z-index:3; 
     }
     .navBar__menu li { width:100%; text-align:center;}
-    .navBar__links {justify-content: center; width:100%; display:none;}
+    .navBar__links {justify-content: center; width:100%; display:none; background-color:rgb(129, 163, 140);}
     .navBar__toggleBtn { display:block;}
     .navBar__menu.active,
     .navBar__links.active{ display:flex;}
     .mainBanner { width:90%; padding:5%;}
     .aboutUs { display:none; }
     .aboutUs__slide { display:block;}
-
+    .ourPhilosophy .web {display:none;}
+    .ourPhilosophy .mobile {display:block;}
+    footer .web {display:none;}
+    footer .mobile {display:block;}
+    .video { height:30vh;}
 }
