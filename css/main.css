@@ -63,5 +63,6 @@ footer .mobile {display:none;}
     .ourPhilosophy .mobile {display:block;}
     footer .web {display:none;}
     footer .mobile {display:block;}
-    .video { height:30vh;}
+    .video { height:35vh;}
+    .ask {width:90%; margin-left:5%; margin-top:5vh;}
 }

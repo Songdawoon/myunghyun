@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--font awsome-->
+    <script src="https://kit.fontawesome.com/48bee8827e.js" crossorigin="anonymous"></script>
+    <!-- emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/main.js" defer></script>
+    <style>
+        .ask { width:60%; margin-left:20%; height:60vh; background:rgba(34,55,40,1); margin-top:15vh; padding:5%;}
+        .ask label {color:white; font-size:1.2em;}
+        .ask div:nth-child(4) label {display:block;}
+        .ask  textarea {width:100%;}
+    </style>
+    <title>G.MyungHyun</title>
+</head>
+<body>
+    <header class="navBarWrap">
+        <nav class="navBar">
+            <div class="navBar__logo">
+                <img src="./images/logo_ori.png" alt="그룹명현">
+            </div>
+            <ul class="navBar__menu">
+                <li><a href="/index.html">HOME</a></li>
+                <li><a href="/index2.html">G.MyungHyun</a></li>
+                <!-- <li><a href="#">Portfolio</a></li> -->
+                <li><a href="/contackUs.html">Contact Us</a></li>
+            </ul>
+            <ul class="navBar__links">
+                <li><a target="blank" href="https://blog.naver.com/ic_hyun"><i class="fab fa-blogger-b"></i></a></li>
+                <li><a target="blank" href="https://www.instagram.com/gonggan_myunghyun_d/"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <a href="#" class="navBar__toggleBtn"><i class="fas fa-bars"></i> </a>
+        </navnavBar>
+    </header>
+
+    <form class="ask" role="form">
+        <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" class="form-control" name="name" placeholder="성함을 입력해주세요" />
+        </div>
+        <div class="form-group">
+            <label for="phone">연락처</label>
+            <input type="text" class="form-control" name="phone" placeholder="전화번호를 입력해주세요" />
+        </div>
+        <div class="form-group">
+            <label for="email">이메일 주소</label>
+            <input type="email" class="form-control" name="email" placeholder="메일 주소를 입력해주세요" />
+        </div>
+        <div class="form-group">
+            <label>상담내용</label>
+            <textarea name="message" rows="5" placeholder="상담을 원하시는 내용을 적어주세요"></textarea>
+        </div>
+        <input type="button" name="submit" class="btn btn-default" value="상담하기"/>
+    
+    </form>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            emailjs.init("user_ncP05GwpmBWZSP2mUBv59");		
+            //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+            $('input[name=submit]').click(function(){       	   
+                var templateParams = {	
+                //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+                    name: $('input[name=name]').val(),
+                    phone: $('input[name=phone]').val(), 
+                    email : $('input[name=email]').val(),
+                    message : $('textarea[name=message]').val()
+                };
+                emailjs.send('songwoonda', 'service_oi5gcov', templateParams)
+                //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+                });
+            });
+    </script>
+    
+</body>
+</html>
