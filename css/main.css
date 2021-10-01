@@ -7,7 +7,7 @@ header { width:1400px; margin:0 auto; padding:8px 12px; }
 .navBar__menu {display:flex; }
 .navBar__menu li { padding:10px 12px; transition: background-color .5s;}
 .navBar__menu li:hover { background-color:darkgrey; border-radius: 4px;}
-.navBar__menu li a{ color:#223728; font-size:17px; padding:8px 12px; text-decoration: none;}
+.navBar__menu li a{ color:#223728; font-size:18px; padding:8px 12px; text-decoration: none;}
 .navBar__links {display:flex;}
 .navBar__links li{  padding:8px 12px;}
 .navBar__links li a i{color:#223728; font-size:23px;}
@@ -52,7 +52,7 @@ footer .mobile {display:none;}
         background-color:rgb(129, 163, 140);  z-index:3; 
     }
     .navBar__menu li { width:100%; text-align:center;}
-    .navBar__links {justify-content: center; width:100%; display:none; background-color:rgb(129, 163, 140);}
+    .navBar__links {justify-content: center; width:100%; display:none; background-color:rgb(129, 163, 140); z-index:4}
     .navBar__toggleBtn { display:block;}
     .navBar__menu.active,
     .navBar__links.active{ display:flex;}

@@ -25,13 +25,19 @@
 
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
+    
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./js/main.js" defer></script>
     <style>
-        .ask { width:60%; margin-left:20%; height:60vh; background:rgba(34,55,40,1); margin-top:15vh; padding:5%;}
+        .ask { width:60%; margin-left:20%; height:66vh; background:rgba(34,55,40,1); margin-top:15vh; padding:5%;}
         .ask label {color:white; font-size:1.2em;}
         .ask div:nth-child(4) label {display:block;}
         .ask  textarea {width:100%;}
+        @media screen and (max-width:768px){
+            .ask { width:90%; margin-left:5%; height:80vh; margin-top:0;}
+            .navBar__menu { margin-bottom:0;padding-bottom:2%;}
+        }
     </style>
     <title>G.MyungHyun</title>
 </head>
@@ -39,13 +45,13 @@
     <header class="navBarWrap">
         <nav class="navBar">
             <div class="navBar__logo">
-                <a href="/myunghyun/index.html"><img src="./images/logo_ori.png" alt="그룹명현"></a>
+                <a href="/index.html"><img src="./images/logo_ori.png" alt="그룹명현"></a>
             </div>
             <ul class="navBar__menu">
-                <li><a href="/myunghyun/index.html">HOME</a></li>
-                <li><a href="/myunghyun/index2.html">G.MyungHyun</a></li>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./aboutUs.html">G.MyungHyun</a></li>
                 <!-- <li><a href="#">Portfolio</a></li> -->
-                <li><a href="/myunghyun/contackUs.html">Contact Us</a></li>
+                <li><a href="./contackUs.html">Contact Us</a></li>
             </ul>
             <ul class="navBar__links">
                 <li><a target="blank" href="https://blog.naver.com/ic_hyun"><i class="fab fa-blogger-b"></i></a></li>
